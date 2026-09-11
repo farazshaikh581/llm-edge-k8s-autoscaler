@@ -22,13 +22,13 @@ set -u
 export PYTHONUNBUFFERED=1
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PYTHON=/users/ffarazug/gym-sfu/venv/bin/python
+PYTHON="${PYTHON:-python3}"
 AUTOSCALER="$SCRIPT_DIR/k8s_autoscaler.py"
 LOADGEN="$SCRIPT_DIR/load_generator.py"
 OUTBASE="$SCRIPT_DIR/results_richer"
 LOGDIR="$SCRIPT_DIR/logs"
 KEYS_FILE="$SCRIPT_DIR/api_keys.conf"
-NTFY_TOPIC="llm-autoscaler-faraz-2026"
+NTFY_TOPIC="llm-autoscaler-richer-real-2026"
 
 # ---- 2-stream parallel sweep support ----
 # STREAM=A (default) drives workload-cpu on worker1+worker2.
